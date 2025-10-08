@@ -1,4 +1,5 @@
-// Insert your own image URLS in lines 127 and 133 //
+// Insert your own image URLS in lines 128 and 134 //
+// Credit: This code was written primarily by Google Gemini. Use caution. Support cannot be provided. //
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
