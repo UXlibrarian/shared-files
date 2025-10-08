@@ -1,3 +1,5 @@
+// Insert your own image URLS in lines 127 and 133 //
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -122,13 +124,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. Inject the new row into the first table ('yourCampaignsTable')
     injectRowWithImage(
         'yourCampaignsTable', 
-        'https://dispatch.barnesandnoble.com/content/dam/ccr/bnstores/books/hero/2025/0898_SkinnyHero_Alchemised_09_23_25.jpg'
+        '#'
     ); 
     
     // 2. Inject the new row into the second table ('linkedAccountCampaignsTable')
     injectRowWithImage(
         'linkedAccountCampaignsTable', 
-        'https://catalog.darienlibrary.org/WebBuilder/ViewImage?id=12&size=x-large'
+        '#'
     );
     
     // 3. Re-apply custom styles with a slight delay.
