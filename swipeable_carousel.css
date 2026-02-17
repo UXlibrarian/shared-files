@@ -67,3 +67,7 @@
     height: auto;
     display: block;
 }
+
+.embeddedCollectionSpotlightBody {
+    background: red;
+}
