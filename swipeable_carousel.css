@@ -1,0 +1,69 @@
+/* Target the specific "Uplifting Children's Books" carousel container */
+/* We use a 'contains' logic or general spotlight class if a specific ID isn't known */
+.aspen-collection-spotlight, 
+.collection-spotlight-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    height: 450px; /* Adjust based on book cover height */
+    overflow: visible !important;
+}
+
+/* Container for the items */
+.slick-track, 
+.carousel-inner,
+.aspen-collection-spotlight .items {
+    display: block !important;
+    position: relative;
+    width: 300px !important; /* Fixed width for the 'deck' */
+    margin: 0 auto;
+}
+
+/* The Individual Book Cards */
+.spotlight-item, 
+.carousel-item,
+.aspen-collection-spotlight .item {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    cursor: grab;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    list-style: none;
+}
+
+/* Stack Effect: Offset the first 3 books to look like a deck */
+.spotlight-item:nth-last-child(1) { z-index: 3; transform: translateZ(0); }
+.spotlight-item:nth-last-child(2) { z-index: 2; transform: translateY(10px) scale(0.95); opacity: 0.9; }
+.spotlight-item:nth-last-child(3) { z-index: 1; transform: translateY(20px) scale(0.9); opacity: 0.8; }
+.spotlight-item:nth-last-child(n+4) { opacity: 0; pointer-events: none; }
+
+/* Tinder Swipe Simulation: When an item is "active" or being moved */
+/* Note: Since we can't add JS, we simulate the 'top' card via the slick-active class */
+.slick-active.spotlight-item {
+    z-index: 10 !important;
+    transform: rotate(-2deg); /* Slight tilt for the top card */
+}
+
+/* Hover effect to show interactivity */
+.spotlight-item:hover {
+    transform: translateY(-5px) rotate(0deg) scale(1.02);
+    z-index: 100;
+}
+
+/* Hide the default navigation arrows and dots if you want a pure swipe look */
+.slick-prev, .slick-next, .slick-dots {
+    display: none !important;
+}
+
+/* Ensure images fit the card nicely */
+.spotlight-item img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    display: block;
+}
